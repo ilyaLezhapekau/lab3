@@ -1,6 +1,6 @@
 #include <Windows.h>
 #include <iostream>
-#include <cstring>
+
 
 using namespace std;
 
@@ -9,7 +9,7 @@ volatile int n;
 HANDLE hTh1, hTh2, hTh3;
 
 void Thread_1(){
-//    srand(time_t(NULL));
+
     while (true) {
         value1++;
         Sleep(200);
@@ -17,7 +17,7 @@ void Thread_1(){
 }
 
 void Thread_2(){
-//    srand(time_t(NULL));
+
     while (true) {
         value2++;
         Sleep(600);
@@ -25,50 +25,11 @@ void Thread_2(){
 }
 
 void Thread_3(){
-//    srand(time_t(NULL));
     while (true) {
         value3++;
         Sleep(400);
     }
 }
-
-//void thread_2(LPVOID param)
-//{
-//	while (true)
-//	{
-//		++(*((int*)param));
-//		Sleep(600);
-//	}
-//
-//	return 0;
-//}
-//
-//DWORD WINAPI thread_3(LPVOID param)
-//{
-//	while (true)
-//	{
-//		++(*((int*)param));
-//		Sleep(400);
-//	}
-//
-//	return 0;
-//}
-
-//void threads_manager()
-//{
-//    while (true)
-//    {
-//        if (value1 * value3 > 500)
-//        {
-//            cout << "value[1] = " << value1 << endl;
-//            cout << "value[3] = " << value3 << endl;
-//            TerminateThread(hTh2, 0);
-//            cout << "thread_hTh2 was terminated" << endl;
-//            CloseHandle(hTh2);
-//        }
-//        Sleep(100);
-//    }
-//}
 
 int main()
 {
@@ -137,22 +98,12 @@ int main()
             CloseHandle(hTh2);
 
         }
-//        else
-//        {
-//            TerminateThread(hTh2, 0);
-//            CloseHandle(hTh2);
-//            cout << "thread_hTh2 was terminated" << endl;
-//        }
+//
         CloseHandle(hTh1);
 //      CloseHandle(hTh2);
         CloseHandle(hTh3);
 
     } while (resp != 'q');
-
-
-
-
-
 
     return 0;
 }
